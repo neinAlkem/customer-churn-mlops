@@ -1,36 +1,44 @@
-version : "3.7"
+version: "3.7"
 
 services:
   minio:
-    image:  minio/minio:latest
+    image: minio/minio:latest
     container_name: minio
     environment:
-      MINIO_ACCESS_KEY: admin123
-      MINIO_SECRET_KEY: admin123
+      MINIO_ROOT_USER: admin123
+      MINIO_ROOT_PASSWORD: admin123
     ports:
-      - "9000:9000" # api , web ui
-      - "9001:9001" # console ui
+      - "9000:9000"  # MinIO API
+      - "9001:9001"  # MinIO Web Console
     volumes:
       - minio_data:/data
-    command : server /data
-    restart : always
+    command: server /data --console-address ":9001" 
+    restart: always
+    networks:
+      - minio-network
 
   ml-pipeline:
-    build: 
+    build:
       context: .
     container_name: ml-pipeline
     environment:
-       MINIO_ACCESS_KEY : admin123
-       MINIO_SECRET_KEY : admin123
-       MINIO_URL : http://minio:9000
-       DVC_BUCKET_NAME: project-mlops 
-       DVC_PATH: data  
+      MINIO_ROOT_USER: admin123
+      MINIO_ROOT_PASSWORD: admin123
+      MINIO_URL: http://minio:9000
+      DVC_BUCKET_NAME: project-mlops
     depends_on:
       - minio
     volumes:
       - .:/app
     command: ["bash", "-c", "dvc pull && python scripts/data_preprocess.py && python scripts/model_train.py && python scripts/model_evaluation.py"]
+    networks:
+      - minio-network
+
 
 volumes:
   minio_data:
     driver: local
+
+networks:
+  minio-network:
+    driver: bridge

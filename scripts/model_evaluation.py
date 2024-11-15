@@ -10,7 +10,7 @@ with open('config.yaml', 'r') as file :
     
 data_train = pd.read_csv(config['data']['processed'])
 X_test = data_train.drop(columns=['Attrition_Flag'])
-y_test = data_train('Attrition_Flag')
+y_test = data_train['Attrition_Flag']
 
 model = joblib.load(os.path.join(config['training']['model_save_path'],'bank_churn_model.pkl'))
 y_pred = model.predict(X_test)

@@ -3,9 +3,7 @@ from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import SMOTE
 from sklearn.ensemble import ExtraTreesClassifier
 import joblib
-from sklearn.metrics import accuracy_score, classification_report
 import os
-import json
 import yaml
 
 with open('config.yaml', 'r') as file :
