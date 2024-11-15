@@ -23,19 +23,5 @@ X_train_smote, y_train_smote = smote.fit_resample(X_train, y_train)
 model = ExtraTreesClassifier(random_state=config['model']['random_state'])
 model.fit(X_train_smote, y_train_smote)
 
-os.makedirs(config['training']['model_save_path'], exist_ok=True)
 joblib.dump(model, os.path.join(config['training']['model_save_path'], 'bank_churn_model.pkl'))
 
-y_pred = model.predict(X_test)
-accuracy = accuracy_score(y_test, y_pred)
-classification_rep = classification_report(y_test, y_pred, output_dict=True)
-
-os.makedirs(config['evaluation']['save_path'], exist_ok=True)
-evaluation_metrics = {
-    'accuracy': accuracy,
-    'classification_report': classification_rep
-}
-
-with open(os.path.join(config['evaluation']['save_path'], 'evaluation_metrics.json'), 'w') as f:
-    json.dump(evaluation_metrics, f, indent=4)
-print(f"Evaluation metrics saved to {config['evaluation']['save_path']}/evaluation_metrics.json")

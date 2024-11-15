@@ -28,5 +28,4 @@ k = config['model']['top_k_features']
 top_k = corelation_matrix_target.abs().sort_values(ascending=False)[:min(k, len(corelation_matrix_target))].index
 
 selected_features = data_train[top_k]
-
 selected_features.to_csv(config['data']['processed'], index=False)
