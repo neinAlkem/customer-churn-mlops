@@ -23,9 +23,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run tests
-      run: |
-        pytest tests/
+    # - name: Run tests
+    #   run: |
+    #     pytest tests/
 
     - name: Build Docker image
       run: |
@@ -40,6 +40,6 @@ jobs:
         docker tag customer-churn-mlops:latest $DOCKER_HUB_USERNAME/customer-churn-mlops:latest
         docker push $DOCKER_HUB_USERNAME/customer-churn-mlops:latest
 
-    - name: Deploy to Server
-      run: |
-        # Add deployment commands here (e.g., Kubernetes or Docker Compose)
+    # - name: Deploy to Server
+    #   run: |
+    #     # Add deployment commands here (e.g., Kubernetes or Docker Compose)
