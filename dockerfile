@@ -1,30 +1,23 @@
-FROM python:3.9-slim
+# Base image
+FROM python:3.8-slim
 
-ENV PYTHONUNBUFFERED=1
-ENV PROJECT_DIR=/app
-ENV MINIO_ROOT_USER=admin123
-ENV MINIO_ROOT_PASSWORD=admin123
-ENV MINIO_URL=http://minio:9000
-ENV DVC_BUCKET_NAME=project-mlops
-ENV DVC_PATH=data
+# Set the working directory
+WORKDIR /app
 
-WORKDIR ${PROJECT_DIR}
+# Copy the requirements file and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+# Copy all necessary scripts and configuration files
+COPY scripts/data_preprocess.py scripts/model_train.py config.yaml /app/
 
-RUN pip install dvc
-COPY requirements.txt $PROJECT_DIR
-RUN pip install -r requirements.txt
+# Install additional packages (if needed)
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-COPY . $PROJECT_DIR
-RUN chmod +x $PROJECT_DIR/scripts/*.py
+# Expose the port (for Flask/FastAPI)
+EXPOSE 5000
 
-RUN dvc remote add -d myremote s3://${DVC_BUCKET_NAME} && \
-    dvc remote modify myremote endpointurl $MINIO_URL && \
-    dvc remote modify myremote access_key_id $MINIO_ROOT_USER && \
-    dvc remote modify myremote secret_access_key $MINIO_ROOT_PASSWORD && \
-    dvc remote modify myremote region us-east-1
-
-RUN dvc remote default myremote
-
-CMD ["bash", "-c", "dvc pull && python scripts/data_preprocess.py && python scripts/model_train.py && python scripts/model_evaluation.py"]
+# Command to run the API (assuming it's in model_train.py or another file)
+CMD ["python", "model_train.py"]
