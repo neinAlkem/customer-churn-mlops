@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/a75efb094a51415595e6f26b7af89db6/artifacts
+end_time: 1734014696244
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a75efb094a51415595e6f26b7af89db6
+run_name: nimble-lark-903
+run_uuid: a75efb094a51415595e6f26b7af89db6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734014681634
+status: 3
+tags: []
+user_id: Hakim

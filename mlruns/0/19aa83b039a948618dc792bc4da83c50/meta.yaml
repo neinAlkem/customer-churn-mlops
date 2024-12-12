@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/19aa83b039a948618dc792bc4da83c50/artifacts
+end_time: 1734017045662
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 19aa83b039a948618dc792bc4da83c50
+run_name: sneaky-penguin-85
+run_uuid: 19aa83b039a948618dc792bc4da83c50
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734017039440
+status: 3
+tags: []
+user_id: Hakim

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/fec649de33a94c8296fb71ca64f5f466/artifacts
+end_time: 1734014918695
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fec649de33a94c8296fb71ca64f5f466
+run_name: masked-seal-745
+run_uuid: fec649de33a94c8296fb71ca64f5f466
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734014913264
+status: 3
+tags: []
+user_id: Hakim

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/c5a4b687bb254f5fbd4312cd97d19675/artifacts
+end_time: 1734012867922
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c5a4b687bb254f5fbd4312cd97d19675
+run_name: youthful-horse-33
+run_uuid: c5a4b687bb254f5fbd4312cd97d19675
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734012856696
+status: 3
+tags: []
+user_id: Hakim

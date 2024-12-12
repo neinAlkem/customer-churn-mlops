@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/d40a344b633f4311bdd24cb1fd6775ee/artifacts
+end_time: 1734017486050
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d40a344b633f4311bdd24cb1fd6775ee
+run_name: whimsical-fowl-700
+run_uuid: d40a344b633f4311bdd24cb1fd6775ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734017473965
+status: 3
+tags: []
+user_id: Hakim

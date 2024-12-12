@@ -6,4 +6,6 @@ joblib
 dvc
 PyYAML
 imbalanced-learn
+mlflow
+prometheus_client
 

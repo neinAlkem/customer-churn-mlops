@@ -1,0 +1,14 @@
+digest: 719c8d06
+name: dataset
+profile: '{"num_rows": 3039, "num_elements": 27351}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "Total_Trans_Ct", "required":
+  true}, {"type": "double", "name": "Total_Ct_Chng_Q4_Q1", "required": true}, {"type":
+  "long", "name": "Total_Revolving_Bal", "required": true}, {"type": "long", "name":
+  "Contacts_Count_12_mon", "required": true}, {"type": "double", "name": "Avg_Utilization_Ratio",
+  "required": true}, {"type": "long", "name": "Total_Trans_Amt", "required": true},
+  {"type": "long", "name": "Months_Inactive_12_mon", "required": true}, {"type": "long",
+  "name": "Total_Relationship_Count", "required": true}, {"type": "double", "name":
+  "Total_Amt_Chng_Q4_Q1", "required": true}]}'
+source: '{"tags": {"mlflow.user": "Hakim", "mlflow.source.name": ".\\scripts\\model_train.py",
+  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "0488bd3b627eee2fc848e09c131932463ecd95f1"}}'
+source_type: code

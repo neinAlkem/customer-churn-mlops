@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/a31d6989a6614a3d9cdb4179e7bd1bce/artifacts
+end_time: 1734015190379
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a31d6989a6614a3d9cdb4179e7bd1bce
+run_name: capable-zebra-154
+run_uuid: a31d6989a6614a3d9cdb4179e7bd1bce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734015184229
+status: 3
+tags: []
+user_id: Hakim

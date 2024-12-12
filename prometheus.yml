@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s  # Scrape targets every 15 seconds.
+
+scrape_configs:
+  - job_name: 'ml_pipeline'
+    static_configs:
+      - targets: ['ml-pipeline:8000']  # Replace with your metrics endpoint.

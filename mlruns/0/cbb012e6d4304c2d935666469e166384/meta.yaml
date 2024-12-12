@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/cbb012e6d4304c2d935666469e166384/artifacts
+end_time: 1734017216898
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cbb012e6d4304c2d935666469e166384
+run_name: carefree-rat-939
+run_uuid: cbb012e6d4304c2d935666469e166384
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734017203725
+status: 3
+tags: []
+user_id: Hakim
